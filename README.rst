@@ -1,3 +1,8 @@
+.. image:: https://travis-ci.org/beataclayton/se_hello_printer_app.svg?branch=master
+      :target: https://travis-ci.org/beataclayton/se_hello_printer_app
+
+.. image:: https://app.statuscake.com/button/index.php?Track=o49V884dlt&Days=1&Design=7
+
 Simple Flask App
 ================
 
@@ -110,10 +115,7 @@ Centos
     $ yum install -y docker-ce
     $ systemctl start docker
 
-.. image:: https://travis-ci.org/beataclayton/se_hello_printer_app.svg?branch=master
-      :target: https://travis-ci.org/beataclayton/se_hello_printer_app
 
-.. image:: https://app.statuscake.com/button/index.php?Track=o49V884dlt&Days=1&Design=7
 Materiały
 =========
 
