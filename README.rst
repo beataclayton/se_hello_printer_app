@@ -110,10 +110,10 @@ Centos
     $ yum install -y docker-ce
     $ systemctl start docker
 
-    .. image:: https://travis-ci.org/beataclayton/se_hello_printer_app.svg?branch=master
+.. image:: https://travis-ci.org/beataclayton/se_hello_printer_app.svg?branch=master
       :target: https://travis-ci.org/beataclayton/se_hello_printer_app
     <a href="https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=o49V884dlt&Days=1&Design=7" /></a>
-    .. image:: https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=o49V884dlt&Days=1&Design=7
+.. image:: https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=o49V884dlt&Days=1&Design=7
 Materiały
 =========
 
