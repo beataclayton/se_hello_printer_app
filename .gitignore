@@ -3,3 +3,7 @@
 test_results.xml
 coverage.xml
 .coverage
+activate/
+input.txt
+test_result.xml
+travis.log
