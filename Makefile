@@ -1,5 +1,5 @@
 SERVICE_NAME=hello-world-printer
-MY_DOCKER_NAME=$(SERVICE_NAME)
+DOCKER_IMG_NAME=$(SERVICE_NAME)
 
 .PHONY: test
 
@@ -25,19 +25,20 @@ docker_build:
 
 docker_run: docker_build
 								docker run \
-												--name $(SERVICE_NAME)-dev \
+											 --name hello-world-printer-dev \
 												-p 5000:5000 \
-												-d $(SERVICE_NAME)
+												-d hello-world-printer
 
 
 docker_stop:
 				docker stop $(SERVICE_NAME)-dev
 
-beataclayton = $(USERNAME)
+USERNAME = beataclayton
+TAG=$(USERNAME)/(hello-world-printer)
 
 
 docker_push: docker_build
-	@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
-	docker tag $(SERVICE_NAME) $(USERNAME)/$(SREVICE_NAME); \
-  docker push $(USERNAME)/$(SERVICE_NAME); \
-  docker logout;
+			 @docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
+			 docker tag hello_world_printer $(TAG); \
+  	   docker push $(TAG); \
+  	 	 docker logout;
