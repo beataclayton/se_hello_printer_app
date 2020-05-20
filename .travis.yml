@@ -15,3 +15,6 @@ deploy:
   provider:heroku
   app: pacific-plains-83932
   api_key: ${HEROKU_API_KEY}
+
+after_success:
+  - make docker_build

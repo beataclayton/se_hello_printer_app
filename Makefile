@@ -1,3 +1,6 @@
+SERVICE_NAME=hello-world-printer
+MY_DOCKER_NAME=$(SERVICE_NAME)
+
 .PHONY: test
 
 deps:
@@ -15,18 +18,26 @@ test_cov:
 	PYTHONPATH=. py.test --verbose -s --cov=. --cov-report xml
 
 test_xunit:
-	PYTHONPATH=. py.test -s --cov=. --cov-report xml --junit-xml=test_results.xml  
-
-
+	PYTHONPATH=. py.test -s --cov=. --cov-report xml --junit-xml=test_results.xml
 
 docker_build:
-	docker build -t hello-world-printer .
+				docker build  -t $(SERVICE_NAME) .
 
-USERNAME=beataclayton
-TAG=$(USERNAME)/hello-world-printer
+docker_run: docker_build
+								docker run \
+												--name $(SERVICE_NAME)-dev \
+												-p 5000:5000 \
+												-d $(SERVICE_NAME)
+
+
+docker_stop:
+				docker stop $(SERVICE_NAME)-dev
+
+beataclayton = $(USERNAME)
+
 
 docker_push: docker_build
 	@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
-	docker tag hello-world-printer $(TAG); \
-  docker push $(TAG); \
+	docker tag $(SERVICE_NAME) $(USERNAME)/$(SREVICE_NAME); \
+  docker push $(USERNAME)/$(SERVICE_NAME); \
   docker logout;
